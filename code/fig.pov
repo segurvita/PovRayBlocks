@@ -92,14 +92,12 @@ light_source {
 //	ピースの配置
 //-------------------------------
 #declare set_span = piece_size +1;
-#declare I = 0;
-#while ( I < 4 )
-    object{
-        piece
-        translate <set_span*I-(2*set_span),0,-(2*set_span)>
-    }
-#declare I = I + 1;
-#end
+
+
+object{ piece rotate y*90*0 translate <-5,0,-4> }
+object{ piece rotate y*90*1 translate <-2,0,-2> }
+object{ piece rotate y*90*2 translate < 3,0,-2> }
+object{ piece rotate y*90*3 translate < 6,0,-4> }
 
                            
 //-------------------------------
