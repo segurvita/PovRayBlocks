@@ -92,12 +92,13 @@ light_source {
 //	ピースの配置
 //-------------------------------
 #declare set_span = piece_size +1;
+#declare x_init = -5;
+#declare z_init = -4;
 
-
-object{ piece rotate y*90*0 translate <-5,0,-4> }
-object{ piece rotate y*90*1 translate <-2,0,-2> }
-object{ piece rotate y*90*2 translate < 3,0,-2> }
-object{ piece rotate y*90*3 translate < 6,0,-4> }
+object{ piece rotate y*90*0 translate <x_init,                      0,z_init> }
+object{ piece rotate y*90*1 translate <x_init+1*set_span,           0,z_init+piece_size> }
+object{ piece rotate y*90*2 translate <x_init+2*set_span+piece_size,0,z_init+piece_size> }
+object{ piece rotate y*90*3 translate <x_init+3*set_span+piece_size,0,z_init> }
 
                            
 //-------------------------------
