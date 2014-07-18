@@ -105,6 +105,11 @@ object{ piece rotate x*90*1+y*90*1 translate <x_init+1*set_span,           piece
 object{ piece rotate x*90*1+y*90*2 translate <x_init+2*set_span+piece_size,piece_size,z_init+set_span+piece_size> }
 object{ piece rotate x*90*1+y*90*3 translate <x_init+3*set_span+piece_size,piece_size,z_init+set_span> }
 
+object{ piece rotate x*90*2+y*90*0 translate <x_init,                       1,z_init+2*set_span+piece_size> }
+object{ piece rotate x*90*2+y*90*1 translate <x_init+1*set_span+piece_size, 1,z_init+2*set_span+piece_size> }
+object{ piece rotate x*90*2+y*90*2 translate <x_init+2*set_span+piece_size, 1,z_init+2*set_span> }
+object{ piece rotate x*90*2+y*90*3 translate <x_init+3*set_span,            1,z_init+2*set_span> }
+
                            
 //-------------------------------
 //	壁
