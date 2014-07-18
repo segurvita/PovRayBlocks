@@ -29,7 +29,7 @@ sky_sphere  {
 //-------------------------------
 //#declare eye_location = 4*X+2*Y+6*Z;  //fig1:通常視点
 //#declare eye_location = 5*X-0.5*Y+5*Z;  //fig2:文字の正面
-#declare eye_location = 4*Z+10*Y;         //fig3:プロジェクタから
+#declare eye_location = 4*Z+15*Y;         //fig3:プロジェクタから
 #declare look_at_location = O;
 camera{
 	location eye_location
@@ -79,13 +79,28 @@ light_source {
 }
 
 //-------------------------------
-//	ピース
+//	ピースの定義
 //-------------------------------
+#declare piece_size = 2;
 #declare piece = union{
     object{unitBlock translate <0,0,0>}
     object{unitBlock translate <1,0,0>}
-}
-object{piece}
+    object{unitBlock translate <0,0,1>}
+}            
+
+//-------------------------------
+//	ピースの配置
+//-------------------------------
+#declare set_span = piece_size +1;
+#declare I = 0;
+#while ( I < 4 )
+    object{
+        piece
+        translate <set_span*I-(2*set_span),0,-(2*set_span)>
+    }
+#declare I = I + 1;
+#end
+
                            
 //-------------------------------
 //	壁
@@ -93,10 +108,6 @@ object{piece}
 #declare wall_span = 1.0;
 #declare wall = union{
 	plane { Y, 0 pigment { checker White, Gray scale wall_span}}		//床
-	plane { Z, -6*wall_span pigment { checker Gray, White scale wall_span}}	    //壁
-	plane { X, -6*wall_span pigment { checker Gray, White scale wall_span}}	    //壁
-	plane { -X, -6*wall_span pigment { checker Gray, White scale wall_span}}	//壁
-	plane { Z, 10*wall_span pigment { checker Gray, White scale wall_span}}	    //壁
 }
 
 object{ wall pigment { checker White, Gray scale wall_span} }
