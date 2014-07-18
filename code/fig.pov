@@ -27,9 +27,9 @@ sky_sphere  {
 //-------------------------------
 //	視点設定
 //-------------------------------
-//#declare eye_location = 4*X+2*Y+6*Z;  //fig1:通常視点
+#declare eye_location = 4*X+2*Y+6*Z;  //fig1:通常視点
 //#declare eye_location = 5*X-0.5*Y+5*Z;  //fig2:文字の正面
-#declare eye_location = 1*X+1*Y+10*Y;         //fig3:プロジェクタから
+//#declare eye_location = 1*X+1*Y+10*Y;         //fig3:プロジェクタから
 #declare look_at_location = O;
 camera{
 	location eye_location
@@ -72,19 +72,20 @@ light_source {
 //-------------------------------
 //	単位ブロック
 //-------------------------------
-#declare block_unit = 1.0;
-#declare block = union{	
-    box{
-        <0,0,0>,<block_unit,block_unit,block_unit>
-        pigment { Blue }
-        finish{phong 1 reflection 0.1}
-    }
+#declare unitBlock = box
+{
+    <0,0,0>,<1,1,1>
+    texture {T_Wood10}
 }
-object{ block }
 
 //-------------------------------
 //	ピース
 //-------------------------------
+#declare piece = union{
+    object{unitBlock translate <0,0,0>}
+    object{unitBlock translate <1,0,0>}
+}
+object{piece}
                            
 //-------------------------------
 //	壁
