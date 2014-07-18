@@ -27,9 +27,9 @@ sky_sphere  {
 //-------------------------------
 //	視点設定
 //-------------------------------
-#declare eye_location = 4*X+2*Y+6*Z;  //fig1:通常視点
+//#declare eye_location = 4*X+2*Y+6*Z;  //fig1:通常視点
 //#declare eye_location = 5*X-0.5*Y+5*Z;  //fig2:文字の正面
-//#declare eye_location = 1*X+1*Y+10*Y;         //fig3:プロジェクタから
+#declare eye_location = 4*Z+10*Y;         //fig3:プロジェクタから
 #declare look_at_location = O;
 camera{
 	location eye_location
